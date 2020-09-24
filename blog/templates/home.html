@@ -1,0 +1,16 @@
+{% for blog in blogs.all%}
+<!-- 내가 지금까지 작성한 모든 blog글이라는
+    객체가 blogs.all에 담긴다. -->
+    <h1> 제목 : {{blog.title}}</h1>
+    <p> 날짜 : {{blog.pub_date}}</p>
+    <p> 본문 미리보기 : {{blog.summary}}<a href="{%url 'detail' blog.id%}">...more</a> </p>
+    <br><br>
+{%endfor%}
+
+<!--
+메소드 .all() : 객체에 있는 모든 쿼리셋을 가져와라
+메소드 .count() : 데이터 갯수
+메소드 .first() : 첫번째 객체
+메소드 .last() : 마지막 객체
+-->
+
